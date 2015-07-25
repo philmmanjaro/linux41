@@ -33,4 +33,7 @@ Bisecting: 85 revisions left to test after this (roughly 6 steps)
 [phil@manjaro linux]$ git bisect bad ee799f41eb2bc0484711b0fc942fddf54248289f
 Bisecting: 34 revisions left to test after this (roughly 5 steps)
 [421ec9017f3a1f3f032d894c55c15870f3d474aa] Merge branch 'x86-fpu-for-linus' of git://git.kernel.org/pub/scm/linux/kernel/git/tip/tip
+[phil@manjaro linux]$ git bisect bad 421ec9017f3a1f3f032d894c55c15870f3d474aa
+Bisecting: 22 revisions left to test after this (roughly 5 steps)
+[b85e67d1483c72b77d1bdc265aa8ba91590794c1] x86/fpu: Rename drop_init_fpu() to fpu_reset_state()
 
