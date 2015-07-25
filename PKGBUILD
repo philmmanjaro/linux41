@@ -13,7 +13,8 @@ _basekernel=4.1
 _basever=41
 _aufs=20150629
 _bfq=v7r8
-_rc=rc1
+_rc=rc0.b1.6c373ca893
+_bisect=6c373ca89399c5a3f7ef210ad8f63dc3437da345
 pkgver=${_basekernel}${_rc}
 pkgrel=1
 arch=('i686' 'x86_64')
@@ -21,7 +22,8 @@ url="http://www.kernel.org/"
 license=('GPL2')
 makedepends=('xmlto' 'docbook-xsl' 'kmod' 'inetutils' 'bc')
 options=('!strip')
-source=("https://www.kernel.org/pub/linux/kernel/v4.x/testing/linux-${_basekernel}-${_rc}.tar.xz"
+source=("$pkgbase-$pkgver.tar.gz::https://github.com/torvalds/linux/archive/$_bisect.tar.gz"
+        #"https://www.kernel.org/pub/linux/kernel/v4.x/testing/linux-${_basekernel}-${_rc}.tar.xz"
         #"https://www.kernel.org/pub/linux/kernel/v4.x/linux-${_basekernel}.tar.xz"
         #"http://www.kernel.org/pub/linux/kernel/v4.x/patch-${pkgver}.xz"
         # the main kernel config files
@@ -48,8 +50,8 @@ source=("https://www.kernel.org/pub/linux/kernel/v4.x/testing/linux-${_basekerne
         '0003-bluetooth-btbcm-allow-btbcm_read_verbose_config-to-f.patch'
         '0004-bitmap-enable-booting-for-dm-md-raid1.patch'
 )
-sha256sums=('ad30def836c0d538c81814cfa49127f745835a921be38d9591443e0e146c1c34'
-            '95ef153322b09bd431188008926303d37411a8f7a21f4b44ab16a55e3fb25659'
+sha256sums=('fcaaab5c7cc9458fbcbcf97a5966d6e7839612b0298314e418b64e4c20144d03'
+            '195e7e165b1df702453ce1bc61da202d2c0ec846d52f46e32f4b7b45d5b3ae33'
             '3435ad970f6fc9b7ac9c026a69fb8c6805675a6ac0c1027bf6fd3cc5ef26d7f2'
             'd1cecc720df66c70f43bdb86e0169d6b756161c870db8d7d39c32c04dc36ed36'
             '6d058de24e029651eef6e7e0133616eddf710aa51dfbba1652026f57a35e42ad'
@@ -73,7 +75,8 @@ sha256sums=('ad30def836c0d538c81814cfa49127f745835a921be38d9591443e0e146c1c34'
             '959c4d71b5dc50434eeecf3a8608758f57f111c6e999289c435b13fc8c6be5f0')
 
 prepare() {
-  cd "${srcdir}/linux-${_basekernel}-${_rc}"
+  #cd "${srcdir}/linux-${_basekernel}-${_rc}"
+  cd "${srcdir}/linux-${_bisect}"
 
   # add upstream patch
   #patch -p1 -i "${srcdir}/patch-${pkgver}"
@@ -85,17 +88,17 @@ prepare() {
 
   # Fix deadlock with stacked loop devices (FS#45129)
   # http://marc.info/?l=linux-kernel&m=143280649731902&w=2
-  patch -Np1 -i ../0001-block-loop-convert-to-per-device-workqueue.patch
-  patch -Np1 -i ../0002-block-loop-avoiding-too-many-pending-per-work-I-O.patch
+  #patch -Np1 -i ../0001-block-loop-convert-to-per-device-workqueue.patch
+  #patch -Np1 -i ../0002-block-loop-avoiding-too-many-pending-per-work-I-O.patch
 
   # Fix bluetooth chip initialization on some macbooks (FS#45554)
   # http://marc.info/?l=linux-bluetooth&m=143690738728402&w=2
   # https://bugzilla.kernel.org/show_bug.cgi?id=100651
-  patch -Np1 -i ../0003-bluetooth-btbcm-allow-btbcm_read_verbose_config-to-f.patch
+  #patch -Np1 -i ../0003-bluetooth-btbcm-allow-btbcm_read_verbose_config-to-f.patch
 
   # Fix kernel oops when booting with root on RAID1 LVM (FS#45548)
   # https://bugzilla.kernel.org/show_bug.cgi?id=100491#c24
-  patch -Np1 -i ../0004-bitmap-enable-booting-for-dm-md-raid1.patch
+  #patch -Np1 -i ../0004-bitmap-enable-booting-for-dm-md-raid1.patch
 
   # set DEFAULT_CONSOLE_LOGLEVEL to 4 (same value as the 'quiet' kernel param)
   # remove this when a Kconfig knob is made available by upstream
@@ -110,14 +113,14 @@ prepare() {
   sed -i -e 's|f_dentry|f_path.dentry|g' "${srcdir}/aufs4-loopback.patch"
 
   # add aufs4 support
-  patch -Np1 -i "${srcdir}/aufs4.1-${_aufs}.patch"
-  patch -Np1 -i "${srcdir}/aufs4-base.patch"
-  patch -Np1 -i "${srcdir}/aufs4-kbuild.patch"
-  patch -Np1 -i "${srcdir}/aufs4-loopback.patch"
-  patch -Np1 -i "${srcdir}/aufs4-mmap.patch"
-  patch -Np1 -i "${srcdir}/aufs4-standalone.patch"
-  patch -Np1 -i "${srcdir}/tmpfs-idr.patch"
-  patch -Np1 -i "${srcdir}/vfs-ino.patch"
+  #patch -Np1 -i "${srcdir}/aufs4.1-${_aufs}.patch"
+  #patch -Np1 -i "${srcdir}/aufs4-base.patch"
+  #patch -Np1 -i "${srcdir}/aufs4-kbuild.patch"
+  #patch -Np1 -i "${srcdir}/aufs4-loopback.patch"
+  #patch -Np1 -i "${srcdir}/aufs4-mmap.patch"
+  #patch -Np1 -i "${srcdir}/aufs4-standalone.patch"
+  #patch -Np1 -i "${srcdir}/tmpfs-idr.patch"
+  #patch -Np1 -i "${srcdir}/vfs-ino.patch"
 
   # add BFQ scheduler
   patch -Np1 -i "${srcdir}/0001-block-cgroups-kconfig-build-bits-for-BFQ-${_bfq}.patch"
@@ -162,7 +165,8 @@ prepare() {
 }
 
 build() {
-  cd "${srcdir}/linux-${_basekernel}-${_rc}"
+  #cd "${srcdir}/linux-${_basekernel}-${_rc}"
+  cd "${srcdir}/linux-${_bisect}"
 
   # build!
   make ${MAKEFLAGS} LOCALVERSION= bzImage modules
@@ -175,7 +179,8 @@ package_linux41() {
   provides=("linux=${pkgver}")
   install=${pkgname}.install
 
-  cd "${srcdir}/linux-${_basekernel}-${_rc}"
+  #cd "${srcdir}/linux-${_basekernel}-${_rc}"
+  cd "${srcdir}/linux-${_bisect}"
 
   KARCH=x86
 

@@ -1,0 +1,15 @@
+[phil@manjaro tmp]$ git clone https://github.com/torvalds/linux.git
+Klone nach 'linux' ...
+remote: Counting objects: 4262407, done.
+remote: Total 4262407 (delta 0), reused 0 (delta 0), pack-reused 4262407
+Empfange Objekte: 100% (4262407/4262407), 1.04 GiB | 2.57 MiB/s, Fertig.
+Löse Unterschiede auf: 100% (3578229/3578229), Fertig.
+Prüfe Konnektivität ... Fertig.
+Checke Dateien aus: 100% (50795/50795), Fertig.
+[phil@manjaro tmp]$ cd linux
+[phil@manjaro linux]$ git bisect start
+[phil@manjaro linux]$ git bisect good v4.0
+[phil@manjaro linux]$ git bisect bad v4.1-rc1
+Bisecting: 5576 revisions left to test after this (roughly 13 steps)
+[6c373ca89399c5a3f7ef210ad8f63dc3437da345] Merge git://git.kernel.org/pub/scm/linux/kernel/git/davem/net-next
+
