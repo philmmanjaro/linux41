@@ -24,3 +24,6 @@ Bisecting: 716 revisions left to test after this (roughly 10 steps)
 [phil@manjaro linux]$ git bisect bad 1a370f4cd95e056d55ef5bf1a183880e70195e59
 Bisecting: 328 revisions left to test after this (roughly 8 steps)
 [7fd56474db326f7a6df0e2a4e3a9600cc083ab9b] Merge branch 'timers-core-for-linus' of git://git.kernel.org/pub/scm/linux/kernel/git/tip/tip
+[phil@manjaro linux]$ git bisect good 7fd56474db326f7a6df0e2a4e3a9600cc083ab9b
+Bisecting: 165 revisions left to test after this (roughly 7 steps)
+[8f74bc5ff0eb20a055e4cb8d390669164ca15cb3] Merge branch 'x86-boot-for-linus' of git://git.kernel.org/pub/scm/linux/kernel/git/tip/tip
