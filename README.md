@@ -20,4 +20,5 @@ Changelog
 * 4.1-rc0-b8-421ec9017f with [linux40 config](https://github.com/philmmanjaro/linux41/blob/master/config.41rc0.b5.7fd56474db) - bad
 * 4.1-rc0-b9-b85e67d148 with [linux40 config](https://github.com/philmmanjaro/linux41/blob/master/config.41rc0.b5.7fd56474db) - good
 * 4.1-rc0-b10-9f3252f1ad with [linux40 config](https://github.com/philmmanjaro/linux41/blob/master/config.41rc0.b5.7fd56474db) - good
-* 4.1-rc0-b11-b48488d109 with [linux40 config](https://github.com/philmmanjaro/linux41/blob/master/config.41rc0.b5.7fd56474db) - tbd
+* 4.1-rc0-b11-b48488d109 with [linux40 config](https://github.com/philmmanjaro/linux41/blob/master/config.41rc0.b5.7fd56474db) - bad
+* 4.1-rc0-b12-cecae36074 with [linux40 config](https://github.com/philmmanjaro/linux41/blob/master/config.41rc0.b5.7fd56474db) - tbd
