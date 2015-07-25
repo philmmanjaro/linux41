@@ -39,4 +39,7 @@ Bisecting: 22 revisions left to test after this (roughly 5 steps)
 [phil@manjaro linux]$ git bisect good b85e67d1483c72b77d1bdc265aa8ba91590794c1
 Bisecting: 10 revisions left to test after this (roughly 4 steps)
 [9f3252f1ad3f10a96a51ebd79b18ffc20664a1d8] Merge branch 'x86-cleanups-for-linus' of git://git.kernel.org/pub/scm/linux/kernel/git/tip/tip
+[phil@manjaro linux]$ git bisect good 9f3252f1ad3f10a96a51ebd79b18ffc20664a1d8
+Bisecting: 6 revisions left to test after this (roughly 3 steps)
+[b48488d10954e0a337c41ea2e6086f274f118acf] Merge branch 'x86-cpu-for-linus' of git://git.kernel.org/pub/scm/linux/kernel/git/tip/tip
 
