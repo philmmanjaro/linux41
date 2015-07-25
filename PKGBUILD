@@ -13,8 +13,8 @@ _basekernel=4.1
 _basever=41
 _aufs=20150629
 _bfq=v7r8
-_rc=rc0.b1.6c373ca893
-_bisect=6c373ca89399c5a3f7ef210ad8f63dc3437da345
+_rc=rc0.b2.e95e7f6270
+_bisect=e95e7f627062be5e6ce971ce873e6234c91ffc50
 pkgver=${_basekernel}${_rc}
 pkgrel=1
 arch=('i686' 'x86_64')
@@ -50,7 +50,7 @@ source=("$pkgbase-$pkgver.tar.gz::https://github.com/torvalds/linux/archive/$_bi
         '0003-bluetooth-btbcm-allow-btbcm_read_verbose_config-to-f.patch'
         '0004-bitmap-enable-booting-for-dm-md-raid1.patch'
 )
-sha256sums=('fcaaab5c7cc9458fbcbcf97a5966d6e7839612b0298314e418b64e4c20144d03'
+sha256sums=('0ab446bac32c8188ae8f521894d479fb5ca0f219f4d1753aa24fef117f739cbb'
             '195e7e165b1df702453ce1bc61da202d2c0ec846d52f46e32f4b7b45d5b3ae33'
             '3435ad970f6fc9b7ac9c026a69fb8c6805675a6ac0c1027bf6fd3cc5ef26d7f2'
             'd1cecc720df66c70f43bdb86e0169d6b756161c870db8d7d39c32c04dc36ed36'
@@ -246,7 +246,9 @@ package_linux41-headers() {
 
   install -dm755 "${pkgdir}/usr/lib/modules/${_kernver}"
 
-  cd "${srcdir}/linux-${_basekernel}-${_rc}"
+  #cd "${srcdir}/linux-${_basekernel}-${_rc}"
+  cd "${srcdir}/linux-${_bisect}"
+
   install -D -m644 Makefile \
     "${pkgdir}/usr/lib/modules/${_kernver}/build/Makefile"
   install -D -m644 kernel/Makefile \
