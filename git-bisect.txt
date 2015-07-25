@@ -21,5 +21,6 @@ Bisecting: 1425 revisions left to test after this (roughly 11 steps)
 [phil@manjaro linux]$ git bisect bad c4be50eee2bd4d50e0f0ca58776f685c08de69c3
 Bisecting: 716 revisions left to test after this (roughly 10 steps)
 [1a370f4cd95e056d55ef5bf1a183880e70195e59] Merge tag 'edac_for_4.1' of git://git.kernel.org/pub/scm/linux/kernel/git/bp/bp
-
-
+[phil@manjaro linux]$ git bisect bad 1a370f4cd95e056d55ef5bf1a183880e70195e59
+Bisecting: 328 revisions left to test after this (roughly 8 steps)
+[7fd56474db326f7a6df0e2a4e3a9600cc083ab9b] Merge branch 'timers-core-for-linus' of git://git.kernel.org/pub/scm/linux/kernel/git/tip/tip
