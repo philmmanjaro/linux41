@@ -27,3 +27,7 @@ Bisecting: 328 revisions left to test after this (roughly 8 steps)
 [phil@manjaro linux]$ git bisect good 7fd56474db326f7a6df0e2a4e3a9600cc083ab9b
 Bisecting: 165 revisions left to test after this (roughly 7 steps)
 [8f74bc5ff0eb20a055e4cb8d390669164ca15cb3] Merge branch 'x86-boot-for-linus' of git://git.kernel.org/pub/scm/linux/kernel/git/tip/tip
+[phil@manjaro linux]$ git bisect good 8f74bc5ff0eb20a055e4cb8d390669164ca15cb3
+Bisecting: 85 revisions left to test after this (roughly 6 steps)
+[ee799f41eb2bc0484711b0fc942fddf54248289f] Merge branch 'x86-platform-for-linus' of git://git.kernel.org/pub/scm/linux/kernel/git/tip/tip
+
