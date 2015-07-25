@@ -13,8 +13,8 @@ _basekernel=4.1
 _basever=41
 _aufs=20150629
 _bfq=v7r8
-_rc=rc0.b3.c4be50eee2
-_bisect=c4be50eee2bd4d50e0f0ca58776f685c08de69c3
+_rc=rc0.b4.1a370f4cd9
+_bisect=1a370f4cd95e056d55ef5bf1a183880e70195e59
 pkgver=${_basekernel}${_rc}
 pkgrel=1
 arch=('i686' 'x86_64')
@@ -50,8 +50,8 @@ source=("$pkgbase-$pkgver.tar.gz::https://github.com/torvalds/linux/archive/$_bi
         '0003-bluetooth-btbcm-allow-btbcm_read_verbose_config-to-f.patch'
         '0004-bitmap-enable-booting-for-dm-md-raid1.patch'
 )
-sha256sums=('d95794b24e9836cf30f006d08bd3dd940b929860c1a51b4aff65b19562bb4706'
-            '195e7e165b1df702453ce1bc61da202d2c0ec846d52f46e32f4b7b45d5b3ae33'
+sha256sums=('5d4d426ef526ad88394344d0bf6ef522af140379fa727a579614a0786a7b81f3'
+            '4a5f06a8fa23fd758db13a68bc969a547a0b542c048bbdb8afce202905036a98'
             '3435ad970f6fc9b7ac9c026a69fb8c6805675a6ac0c1027bf6fd3cc5ef26d7f2'
             'd1cecc720df66c70f43bdb86e0169d6b756161c870db8d7d39c32c04dc36ed36'
             '6d058de24e029651eef6e7e0133616eddf710aa51dfbba1652026f57a35e42ad'

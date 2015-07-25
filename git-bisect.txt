@@ -18,5 +18,8 @@ Bisecting: 3007 revisions left to test after this (roughly 12 steps)
 [phil@manjaro linux]$ git bisect bad e95e7f627062be5e6ce971ce873e6234c91ffc50
 Bisecting: 1425 revisions left to test after this (roughly 11 steps)
 [c4be50eee2bd4d50e0f0ca58776f685c08de69c3] Merge tag 'driver-core-4.1-rc1' of git://git.kernel.org/pub/scm/linux/kernel/git/gregkh/driver-core
+[phil@manjaro linux]$ git bisect bad c4be50eee2bd4d50e0f0ca58776f685c08de69c3
+Bisecting: 716 revisions left to test after this (roughly 10 steps)
+[1a370f4cd95e056d55ef5bf1a183880e70195e59] Merge tag 'edac_for_4.1' of git://git.kernel.org/pub/scm/linux/kernel/git/bp/bp
 
 
