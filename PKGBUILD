@@ -51,7 +51,7 @@ source=("$pkgbase-$pkgver.tar.gz::https://github.com/torvalds/linux/archive/$_bi
         '0004-bitmap-enable-booting-for-dm-md-raid1.patch'
 )
 sha256sums=('e5785385a88e77ac8c3e45ddbeb30e0f897ebb4954b10f2dc11827ee76910291'
-            '6e6935aa1fc4f61d956c8e085fc434a3d3f97a7459d6b528e7d07408681bfb8f'
+            'ac1e6e6d4a03a080bef97987364f08b8c3d7af4e6ba95215a1b32305591b9e85'
             '3435ad970f6fc9b7ac9c026a69fb8c6805675a6ac0c1027bf6fd3cc5ef26d7f2'
             'd1cecc720df66c70f43bdb86e0169d6b756161c870db8d7d39c32c04dc36ed36'
             '6d058de24e029651eef6e7e0133616eddf710aa51dfbba1652026f57a35e42ad'
